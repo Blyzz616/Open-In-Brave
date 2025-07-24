@@ -28,4 +28,41 @@ open-in-brave-extension/
 ├── open-in-brave.py       ← Native Python script to launch Brave with a URL  
 └── icon.png               ← Extension icon  
 
+## Installation Instructions
 
+### 1. Install the Extension in Edge (Developer Mode)  
+
+Open edge://extensions/ in Microsoft Edge.  
+
+Enable Developer mode.
+
+Click Load unpacked and select the `open-in-brave-extension` folder.
+
+### 2. Install the Native Messaging Host
+
+This extension requires a small native client to launch Brave:
+
+Ensure Python 3.x is installed and added to PATH.
+
+Run this command to register the native messaging host:
+```
+python open-in-brave.py --register
+```
+(Optionally, you can automate this via a .bat or .ps1 installer for ease of use.)
+
+## Admin / Managed Configuration
+
+Supports managed storage via Chrome's group policy mechanism. Admins can predefine allowed URLs, enable/disable features, or lock options.
+
+## Requirements
+
+- Microsoft Edge (Chromium-based)
+- Brave browser
+- Python 3.x (for native client)
+
+## TODOs / Future Features
+
+- [ ] Auto-detect Brave install path
+- [ ] Add keyboard shortcuts support
+- [ ] Support macOS/Linux native hosts
+- [ ] Export/import user config
