@@ -18,14 +18,14 @@ Ms Edge add-on that will allow the user to open links in Brave Browser.
 
 ## File Layout
 
-open-in-brave-extension/
-├── manifest.json          ← Extension manifest
-├── background.js          ← Handles extension events & messaging
-├── content.js             ← Injected into tabs for meta-click detection
-├── options.html           ← Settings UI for the extension
-├── options.js             ← Saves & retrieves user options
-├── open-in-brave.json     ← Native messaging host registration file
-├── open-in-brave.py       ← Native Python script to launch Brave with a URL
-└── icon.png               ← Extension icon
+open-in-brave-extension/  
+├── manifest.json          ← Extension manifest  
+├── background.js          ← Handles extension events & messaging  
+├── content.js             ← Injected into tabs for meta-click detection  
+├── options.html           ← Settings UI for the extension  
+├── options.js             ← Saves & retrieves user options  
+├── open-in-brave.json     ← Native messaging host registration file  
+├── open-in-brave.py       ← Native Python script to launch Brave with a URL  
+└── icon.png               ← Extension icon  
 
 
