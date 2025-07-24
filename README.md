@@ -3,24 +3,29 @@ Ms Edge add-on that will allow the user to open links in Brave Browser.
 
 ## Planned Features for "Open in Brave" Extension
 
-Feature	How it will be implemented  
-✅ Send current page to Brave via action button	Already implemented via browserAction.onClicked  
-✅ Send link from right-click context menu	Use chrome.contextMenus to add a right-click menu item  
-✅ Send links matching keywords, URLs, or hostnames	Use a configurable filter + tab change listener  
-✅ Optionally close the Edge tab after sending	Add a user setting to close tab after native message is sent  
-✅ Optionally open link in both Edge and Brave	Conditional logic — don't close tab if setting is off  
-✅ Redirect top-level navigation	Use chrome.webRequest to intercept and redirect to Brave  
-✅ Native client auto-prompt on first use	Detect failure and prompt user to install it via a message box or tab  
-✅ Managed storage support	Use chrome.storage.managed with fallback to chrome.storage.local  
-✅ Send on meta-click or left-click	Use chrome.webNavigation and content scripts to detect modifier keys  
+| Feature | Description |
+| ------- | ----------- |
+| Open current tab in Brave | Click the action button to open the current page in Brave. |
+| Right-click to send links | Adds a context menu entry to send individual links to Brave. |
+| Filter URLs, hostnames, or keywords | Only send links that match predefined patterns. |
+| Optional auto-close of Edge tab | User setting to close tab after sending it to Brave. |
+| Open in both Edge and Brave | Optionally keep the Edge tab open. |
+| Redirect top-level navigation | Optionally intercept navigation and redirect it to Brave automatically. |
+| Native client integration | Uses a lightweight Python script to launch Brave from Edge. |
+| First-use prompt for native client | Prompts the user to install native messaging host if not detected. |
+| Managed storage support | Admins can configure settings via group policy. |
+| Meta-click and modifier detection | Detects control/meta/alt key presses on links to trigger Brave redirection. |
 
 ## File Layout
 
-open-in-brave-extension/  
-├── manifest.json  
-├── background.js  
-├── content.js              ← for meta-key detection  
-├── options.html            ← UI to configure behaviors  
-├── options.js              ← JS for config storage  
-├── icon.png  
+open-in-brave-extension/
+├── manifest.json          ← Extension manifest
+├── background.js          ← Handles extension events & messaging
+├── content.js             ← Injected into tabs for meta-click detection
+├── options.html           ← Settings UI for the extension
+├── options.js             ← Saves & retrieves user options
+├── open-in-brave.json     ← Native messaging host registration file
+├── open-in-brave.py       ← Native Python script to launch Brave with a URL
+└── icon.png               ← Extension icon
+
 
