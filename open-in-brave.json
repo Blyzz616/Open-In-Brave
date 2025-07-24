@@ -1,0 +1,9 @@
+{
+  "name": "open_in_brave",
+  "description": "Opens a URL in Brave browser",
+  "path": "C:\\Scripts\\open-in-brave.py",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://<your-extension-id>/"
+  ]
+}
