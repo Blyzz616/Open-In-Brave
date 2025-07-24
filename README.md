@@ -16,11 +16,11 @@ Feature	How it will be implemented
 
 ## File Layout
 
-open-in-brave-extension/
-├── manifest.json
-├── background.js
-├── content.js              ← for meta-key detection
-├── options.html            ← UI to configure behaviors
-├── options.js              ← JS for config storage
-├── icon.png
+open-in-brave-extension/  
+├── manifest.json  
+├── background.js  
+├── content.js              ← for meta-key detection  
+├── options.html            ← UI to configure behaviors  
+├── options.js              ← JS for config storage  
+├── icon.png  
 
